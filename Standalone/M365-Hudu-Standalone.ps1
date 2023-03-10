@@ -9,7 +9,7 @@
 # Your Azure Keyvault name
 $VaultName = "Your Key Vault"
 # Microsoft Secure Application Model Info
-$customerExclude = (Get-AzKeyVaultSecret -vaultName $VaultName -name "customerExclude" -AsPlainText) -split ',' 
+$customerExclude = (Get-AzKeyVaultSecret -vaultName $VaultName -name "customerExclude" -AsPlainText) -split '|' 
 $script:ApplicationId = Get-AzKeyVaultSecret -vaultName $VaultName -name "ApplicationID" -AsPlainText
 $script:ApplicationSecret = Get-AzKeyVaultSecret -vaultName $VaultName -name "ApplicationSecret" -AsPlainText
 $script:TenantID = Get-AzKeyVaultSecret -vaultName $VaultName -name "TenantID" -AsPlainText
